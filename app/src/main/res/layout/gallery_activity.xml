@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/menu_bg">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:padding="0dp"
+        android:background="@color/acapulco"
+        android:elevation="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/back_btn"
+                style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="17dp"
+                android:padding="0dp"
+                android:gravity="bottom"
+                app:icon="@drawable/ic_baseline_arrow_back_ios_24"
+                app:iconTint="@color/lighter_pale_orange"
+                app:iconSize="22sp"
+                app:iconPadding="0dp"
+                android:text="Home"
+                android:textSize="20sp"
+                android:textColor="@color/lighter_pale_orange"
+                android:textAllCaps="false"
+                app:backgroundTint="@android:color/transparent"/>
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/select_btn"
+                style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:padding="0dp"
+                android:gravity="bottom"
+                android:text="Select"
+                android:textSize="20sp"
+                android:textColor="@color/lighter_pale_orange"
+                android:textAllCaps="false"
+                app:backgroundTint="@android:color/transparent"/>
+
+        </LinearLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+    <ProgressBar
+        android:id="@+id/progress_loader"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_centerInParent="true"
+        android:minWidth="80dp"
+        android:minHeight="80dp"
+        android:layout_gravity="center"
+        android:visibility="invisible"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <LinearLayout
+        android:id="@+id/gallery_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="70dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null">
+
+            <LinearLayout
+                android:id="@+id/linear_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="12dp"
+                android:orientation="vertical">
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/refresh_btn"
+        style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/acapulco"
+        android:paddingStart="16dp"
+        app:cornerRadius="40dp"
+        app:icon="@drawable/ic_baseline_refresh_24"
+        app:iconSize="30dp"
+        app:iconTint="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/action_tab" />
+
+    <LinearLayout
+        android:id="@+id/action_tab"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="5dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="@color/light_brown"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/share_btn"
+            style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+            android:layout_width="90dp"
+            android:layout_height="50dp"
+            android:padding="0dp"
+            app:icon="@drawable/ic_baseline_share_24"
+            app:iconGravity="top"
+            app:iconSize="17sp"
+            app:iconPadding="2dp"
+            android:text="Share"
+            android:textSize="13sp"
+            app:backgroundTint="@android:color/transparent"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/download_btn"
+            style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:padding="0dp"
+            app:icon="@drawable/ic_baseline_cloud_download_24"
+            app:iconGravity="top"
+            app:iconSize="17sp"
+            app:iconPadding="2dp"
+            android:textSize="13sp"
+            android:text="Download"
+            app:backgroundTint="@android:color/transparent"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/delete_btn"
+            style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+            android:layout_width="90dp"
+            android:layout_height="50dp"
+            android:padding="0dp"
+            app:icon="@drawable/ic_baseline_delete_forever_24"
+            app:iconGravity="top"
+            app:iconSize="17sp"
+            app:iconPadding="2dp"
+            android:textSize="13sp"
+            app:iconTint="@color/maroon"
+            android:text="Delete"
+            android:textColor="@color/maroon"
+            app:backgroundTint="@android:color/transparent"/>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

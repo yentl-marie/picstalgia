@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "205625392563",
+    "project_id": "picstalgia-93fee",
+    "storage_bucket": "picstalgia-93fee.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:205625392563:android:9b1e2a22a9e362f6225fc6",
+        "android_client_info": {
+          "package_name": "com.app.picstalgia"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "205625392563-1o62jesiu3sb60lcck4ill38nfk5b45i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC1m3KOb-37hh_5PJvLSGIhyPWzJO5NxF4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "205625392563-1o62jesiu3sb60lcck4ill38nfk5b45i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

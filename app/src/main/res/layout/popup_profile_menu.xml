@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:backgroundTint="@color/white"
+    android:orientation="vertical"
+    android:gravity="center">
+
+
+        <TextView
+            android:id="@+id/email_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:drawableLeft="@drawable/ic_baseline_account_circle_24"
+            android:drawablePadding="10dp"
+            android:drawableTint="@color/white"
+            android:background="@color/acapulco"
+            android:layout_gravity="center"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/brown"/>
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/email_verify"
+        style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Verify account"
+        android:textColor="@color/black"
+        android:textAlignment="textStart"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        app:icon="@drawable/ic_baseline_warning_24"
+        app:iconTint="@color/black"
+        android:background="@android:color/transparent"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/brown"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/change_pw"
+        style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Change password"
+        android:textColor="@color/black"
+        android:textAlignment="textStart"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        app:icon="@drawable/ic_baseline_vpn_key_24"
+        app:iconTint="@color/black"
+        android:background="@android:color/transparent"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/brown"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/delete_acct"
+        style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Delete account"
+        android:textColor="@color/black"
+        android:textAlignment="textStart"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        app:icon="@drawable/ic_baseline_delete_forever_24"
+        app:iconTint="@color/black"
+        android:background="@android:color/transparent"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/brown"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/sign_out"
+        style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Sign out"
+        android:textColor="@color/black"
+        android:textAlignment="textStart"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        app:icon="@drawable/ic_baseline_logout_24"
+        app:iconTint="@color/black"
+        android:background="@android:color/transparent"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/brown"/>
+
+</LinearLayout>

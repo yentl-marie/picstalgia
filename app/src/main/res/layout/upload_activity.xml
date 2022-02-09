@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:backgroundTint="@color/black">
+
+    <LinearLayout
+        android:id="@+id/linear_layout"
+        android:layout_width="285dp"
+        android:layout_height="380dp"
+        android:layout_marginTop="60dp"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:backgroundTint="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="260dp"
+            android:layout_height= "260dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginStart="12dp"
+            android:orientation="vertical"
+            android:background="@drawable/polaroid_frame">
+
+
+            <ImageView
+                android:id="@+id/photo_view"
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:layout_marginTop="3dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@color/dim_grey"
+                android:backgroundTint="@color/dim_grey"/>
+        </LinearLayout>
+
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginStart="20dp"
+            android:src="@drawable/logo_circle"/>
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progress_loader"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="10dp"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/progress_text" />
+
+    <TextView
+        android:id="@+id/progress_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="60dp"
+        android:text="Processing"
+        android:textSize="15sp"
+        android:textColor="@color/light_grey"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/finish_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginBottom="80dp"
+        android:backgroundTint="@color/acapulco"
+        android:text="Go to Main"
+        android:textAllCaps="false"
+        android:textSize="15sp"
+        app:icon="@drawable/ic_baseline_open_in_new_24"
+        app:iconSize="25sp"
+        app:iconTint="@color/lighter_pale_orange"
+        app:iconGravity="end"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/retry_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginBottom="80dp"
+        android:backgroundTint="@color/acapulco"
+        android:text="Retry"
+        android:textSize="15sp"
+        app:icon="@drawable/ic_baseline_refresh_24"
+        app:iconSize="25sp"
+        app:iconTint="@color/lighter_pale_orange"
+        app:iconGravity="end"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toStartOf="@+id/cancel_btn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/cancel_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginBottom="80dp"
+        android:backgroundTint="@color/red"
+        android:text="Close"
+        android:textSize="15sp"
+        app:icon="@drawable/ic_baseline_clear_24"
+        app:iconSize="25sp"
+        app:iconTint="@color/lighter_pale_orange"
+        app:iconGravity="end"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/retry_btn"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

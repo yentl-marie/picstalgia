@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.app.picstalgia">
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <uses-feature android:name="android.hardware.camera.any" />
+
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+    <queries>
+        <intent>
+            <action android:name="android.media.action.IMAGE_CAPTURE" />
+        </intent>
+    </queries>
+
+    <application
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Picstalgia"
+        android:usesCleartextTraffic="true"
+        tools:replace="android:theme">
+
+
+        <activity android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".SignUp"
+            android:label="SignUp"
+            android:theme="@style/Theme.Picstalgia" />
+        <activity
+            android:name=".LogIn"
+            android:label="LogIn"
+            android:theme="@style/Theme.Picstalgia" />
+        <activity
+            android:name=".MainMenu"
+            android:label="MainMenu"
+            android:theme="@style/Theme.Picstalgia" />
+        <activity
+            android:name=".PictureVideo"
+            android:label="PictureVideo"
+            android:theme="@style/Theme.Picstalgia" />
+        <activity
+            android:name=".PictureAudio"
+            android:label="PictureAudio"
+            android:theme="@style/Theme.Picstalgia" />
+        <activity
+            android:name=".PictureLink"
+            android:label="PictureLink"
+            android:theme="@style/Theme.Picstalgia" />
+        <activity
+            android:name=".AudioRecorder"
+            android:label="AudioRecorder"
+            android:theme="@style/Theme.Picstalgia" />
+        <activity
+            android:name=".Scanner"
+            android:label="Scanner"
+            android:theme="@style/Theme.Picstalgia" />
+        <activity
+            android:name=".CameraScanner"
+            android:label="CameraScanner"
+            android:theme="@style/Theme.Picstalgia" />
+        <activity
+            android:name=".Upload"
+            android:label="Upload"
+            android:theme="@style/Theme.Picstalgia" />
+        <activity android:name=".MediaPlayer"/>
+        <activity android:name=".Gallery" />
+        <activity android:name="com.dsphotoeditor.sdk.activity.DsPhotoEditorActivity" />
+        <activity android:name="com.dsphotoeditor.sdk.activity.DsPhotoEditorStickerActivity" />
+        <activity android:name="com.dsphotoeditor.sdk.activity.DsPhotoEditorTextActivity" />
+        <activity android:name="com.dsphotoeditor.sdk.activity.DsPhotoEditorDrawActivity" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.app.picstalgia.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true"
+            tools:replace="android:authorities">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+    </application>
+
+</manifest>
