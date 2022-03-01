@@ -284,7 +284,7 @@ public class PictureLink extends AppCompatActivity {
                         }
                         constraintSet.connect(R.id.plus, ConstraintSet.TOP, R.id.relative_layout, ConstraintSet.BOTTOM, 40);
                         constraintSet.applyTo(constraintLayout);
-                        boolean delete  = photoFile.delete();
+                        deleteMedia();
 
                         //get path
                         String editPath = uri.getPath();
@@ -294,12 +294,13 @@ public class PictureLink extends AppCompatActivity {
 
                         //replace file with new edited image
                         photoFile = new File(editPath);
+                        mediaResource.setPhotoPath(editPath);
                         int editButtonID = mediaResource.showImage(photoFile);
                         ids = mediaResource.getPhotoIds();
                         editButton = findViewById(editButtonID);
                         setEditButton();
                     } else {
-                        System.out.println("==================no edit save");
+                        Toast.makeText(PictureLink.this, "Edited picture was not saved.", Toast.LENGTH_SHORT).show();
                     }
 
                 }

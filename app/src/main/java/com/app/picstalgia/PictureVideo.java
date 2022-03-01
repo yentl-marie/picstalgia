@@ -230,11 +230,9 @@ public class PictureVideo  extends AppCompatActivity {
                         }
                         constraintSet.connect(R.id.plus, ConstraintSet.TOP, R.id.relative_layout, ConstraintSet.BOTTOM, 40);
                         constraintSet.applyTo(constraintLayout);
-                        boolean delete  = photoFile.delete();
-                        mediaResource.setPhotoPath(null);
+                        deletePhoto();
 
                         //get path
-                        System.out.println("====path edit "+uri.getPath());
                         String editPath = uri.getPath();
                         if(SDK_INT >= Build.VERSION_CODES.R) {
                             editPath = getRealPathFromURI(uri);
@@ -242,6 +240,7 @@ public class PictureVideo  extends AppCompatActivity {
 
                         //replace file with new edited image
                         photoFile = new File(editPath);
+                        mediaResource.setPhotoPath(editPath);
                         int editID = mediaResource.showImage(photoFile);
                         ids = mediaResource.getPhotoIds();
                         editButton = findViewById(editID);
@@ -249,7 +248,6 @@ public class PictureVideo  extends AppCompatActivity {
                     } else {
                         Toast.makeText(PictureVideo.this, "Edited picture was not saved.", Toast.LENGTH_SHORT).show();
                     }
-
                 }
             }
     );
@@ -322,12 +320,17 @@ public class PictureVideo  extends AppCompatActivity {
     }
 
     //delete media when going back
-    public void deleteMedia() {
+
+    private void deletePhoto() {
         photoFile = mediaResource.getPhotoFile();
         if(photoFile != null) {
             boolean delete = photoFile.delete();
             mediaResource.setPhotoPath(null);
         }
+    }
+
+    private void deleteMedia() {
+        deletePhoto();
 
         videoFile = mediaResource.getMediaFile();
         if(videoFile != null) {

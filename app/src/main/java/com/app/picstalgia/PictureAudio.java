@@ -233,7 +233,7 @@ public class PictureAudio extends AppCompatActivity {
                         }
                         constraintSet.connect(R.id.plus, ConstraintSet.TOP, R.id.relative_layout, ConstraintSet.BOTTOM, 40);
                         constraintSet.applyTo(constraintLayout);
-                        boolean delete  = photoFile.delete();
+                        deletePhoto();
 
                         //get path
                         String editPath = uri.getPath();
@@ -241,15 +241,15 @@ public class PictureAudio extends AppCompatActivity {
                             editPath = getRealPathFromURI(uri);
                         }
 
-                        System.out.println("====path edit "+editPath);
                         //replace file with new edited image
                         photoFile = new File(editPath);
+                        mediaResource.setPhotoPath(editPath);
                         int editButtonID = mediaResource.showImage(photoFile);
                         ids = mediaResource.getPhotoIds();
                         editButton = findViewById(editButtonID);
                         setEditButton();
                     } else {
-                        System.out.println("==================no edit save");
+                        Toast.makeText(PictureAudio.this, "Edited picture was not saved.", Toast.LENGTH_SHORT).show();
                     }
                 }
             }
@@ -299,12 +299,16 @@ public class PictureAudio extends AppCompatActivity {
             });
 
     //delete media when going back
-    public void deleteMedia() {
+    private void deletePhoto() {
         photoFile = mediaResource.getPhotoFile();
         if(photoFile != null) {
             mediaResource.setPhotoPath(null);
             boolean delete = photoFile.delete();
         }
+    }
+
+    public void deleteMedia() {
+        deletePhoto();
 
         audioFile = mediaResource.getMediaFile();
         if(audioFile != null) {
