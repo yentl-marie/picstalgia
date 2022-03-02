@@ -254,7 +254,7 @@ public class Gallery extends AppCompatActivity {
                     if(uriList.contains(Uri.parse(ERROR_URI))) {
                         Toast.makeText(Gallery.this, "Error detected.", Toast.LENGTH_SHORT).show();
                     } else {
-                        Toast.makeText(Gallery.this, "Download complete.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Gallery.this, "See downloads in Picstalgia/Images folder in your local memory.", Toast.LENGTH_LONG).show();
                     }
 
                 }
@@ -263,43 +263,6 @@ public class Gallery extends AppCompatActivity {
         }).execute(DOWNLOAD_ACTION);
 
     }
-
-
-//    public void showErrorResult(String action) {
-//        new AlertDialog.Builder(this)
-//                .setTitle("Error!")
-//                .setMessage("Failed "+ action +" images. Has encountered "+ errorNum+" errors.")
-//
-//                // Specifying a listener allows you to take an action before dismissing the dialog.
-//                // The dialog is automatically dismissed when a dialog button is clicked.
-//                .setPositiveButton("Close", new DialogInterface.OnClickListener() {
-//                    public void onClick(DialogInterface dialog, int which) {
-//                        errorNum=0;
-//                        if(action.equals(DELETE_ACTION)) {
-//                            refresh();
-//                        }
-//                    }
-//                })
-//                .show();
-//    }
-//
-//    public void showSuccessResult(String action) {
-//        new AlertDialog.Builder(this)
-//                .setTitle("DONE!")
-//                .setMessage("Finished "+action+" selected images")
-//
-//                // Specifying a listener allows you to take an action before dismissing the dialog.
-//                // The dialog is automatically dismissed when a dialog button is clicked.
-//                .setPositiveButton("Close", new DialogInterface.OnClickListener() {
-//                    public void onClick(DialogInterface dialog, int which) {
-//                        errorNum=0;
-//                        if(action.equals(DELETE_ACTION)) {
-//                            refresh();
-//                        }
-//                    }
-//                })
-//                .show();
-//    }
 
 
     //change the color of the area at the top
